@@ -1,7 +1,12 @@
 <h1>Books#edit</h1>
 
+<%= form_with model: @book, url: book_path(@book.id), method: :patch do |f| %>
 <h2>タイトル</h2>
-<p><%= @book.title %></p>
+<%= f.text_field :title %>
 
 <h2>本文</h2>
-<p><%= @book.body %></p>
+<%= f.text_area :body %>
+
+<%= f.submit '保存' %>
+
+<% end %>
