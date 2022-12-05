@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 30px;
+}
+
+.data ,th {
+  width: 200px;
+}
+
+
+.button {
+  font-size: 13px;
+  height: 16px;
+  width: 48px;
+  background-color: orange;
+}

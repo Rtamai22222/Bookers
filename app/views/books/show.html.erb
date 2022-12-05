@@ -5,3 +5,6 @@
 
 <h2>本文</h2>
 <p><%= @book.body %></p>
+
+<span><%= link_to 'EDIT', edit_book_path(@book.id) %></span>
+<span><%= link_to 'BACK', '/books' %></span>
