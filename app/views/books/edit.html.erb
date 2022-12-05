@@ -7,6 +7,9 @@
 <h2>本文</h2>
 <%= f.text_area :body %>
 
-<%= f.submit '保存' %>
+<%= f.submit 'Update Book' %>
 
 <% end %>
+
+<span><%= link_to 'SHOW', book_path(@book.id) %></span>
+<span><%= link_to 'BACK', '/books' %></span>

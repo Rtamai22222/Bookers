@@ -6,7 +6,6 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all
-    
     @book = Book.new
   end
 
@@ -41,8 +40,8 @@ class BooksController < ApplicationController
       # flash[:notice] = "投稿が成功しました"
       redirect_to book_path(@book.id)
     else
-      # @lists = List.all
-      render :new
+      @books = Book.all
+      render :index
     end
   end
   
