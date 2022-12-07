@@ -22,14 +22,13 @@ body {
   margin: 30px;
 }
 
-.data ,th {
+th {
   width: 200px;
 }
 
-
-.button {
+a {
+  color: black;
   font-size: 13px;
   height: 16px;
-  width: 48px;
-  background-color: orange;
+  /*width: 48px;*/
 }

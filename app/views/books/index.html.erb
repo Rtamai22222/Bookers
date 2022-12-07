@@ -1,45 +1,46 @@
 <h1>Books</h1>
 
 <table>
-  
+
   <thead>
     <tr>
       <th>Title</th>
       <th>Body</th>
-      <!--<th></th>-->
-      <!--<th></th>-->
-      <!--<th></th>-->
+      <th colspan="3"></th>
     </tr>
   </thead>
-  
+
   <tbody>
     <% @books.each do |booklist| %>
       <tr>
         <td class="data"><%= booklist.title %></td>
         <td class="data"><%= booklist.body %></td>
-        <td class="button"><%= link_to 'SHOW', book_path(booklist.id) %></td>
-        <td class="button"><%= link_to 'EDIT', edit_book_path(booklist.id) %></td>
+        <td class="button"><%= link_to 'Show', book_path(booklist.id) %></td>
+        <td class="button"><%= link_to 'Edit', edit_book_path(booklist.id) %></td>
         <td class="button"><%= link_to 'Destroy', book_path(booklist.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
-      <tr/>  
+      <tr/>
     <% end %>
   </tbody>
 </table>
 
-<h1>new</h1>
+<h2>New book</h2>
 
   <% if @book.errors.any? %>
-    <%= @book.errors.count %>error
+    <%= @book.errors.count %>errors
     <ul>
       <% @book.errors.full_messages.each do |message|%>
-      <li><%= message %></li>
+        <li><%= message %></li>
       <% end %>
     </ul>
   <% end %>
 
+
   <%= form_with model: @book, url: "/books", method: :post do |f| %>
-    <h4>title</h4>
-    <%= f.text_field :title %>
-    <h4>body</h4>
-    <%= f.text_area :body %>
-    <%= f.submit 'Create Book' %>
+      <h4>title</h4>
+      <%= f.text_field :title %>
+
+      <h4>body</h4>
+      <%= f.text_area :body %>
+
+      <%= f.submit 'Create Book' %>
   <% end %>
